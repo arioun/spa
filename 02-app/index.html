@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>第二次作业</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="btn.js"></script>
+    <script src="pwd.js"></script>
+    <script src="download.js"></script>
+    <script src="age.js"></script>
+</head>
+<body>
+    <div id="btn">
+        <input type="button" id="agree-btn"value="同意(10s)"disabled="disabled">
+        
+    </div>
+    <div id="pwd-div">
+        <label for="">密码：</label>
+        <input type="password" id="pwd">
+        <i class="icon"></i>
+    </div>
+
+    <div id="jindu">
+        <label for="">下载进度：</label>
+        <progress value="0" max="100" id="prog"></progress><br>
+        <div>
+            <input type="button" id="begin-btn" value="开始">
+            <input type="button" id="pause-btn" value="暂停">
+            <input type="button" id="reset-btn" value="重置">
+        </div>
+    </div>
+
+    <div id="range">
+        <label for="">年龄:</label>
+        <input type="range"min="0" max="100"step="1"id="age-range"value="0"> <br>
+        <p id="age"></p>
+    </div>
+
+
+</body>
+</html>

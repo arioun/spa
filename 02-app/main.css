@@ -1,0 +1,14 @@
+*{margin: 0 auto;padding: 0;}
+div{margin: 20px 0 20px 30px;}
+
+#agree-btn{width: 100px;height: 70px;}
+
+#pwd{height: 31px;width: 220px;padding-right:41px;}
+
+.icon{position:absolute;left: 300px; z-index: 5;
+    background-image: url(eye-close.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 42px;
+    height: 35px;
+}
