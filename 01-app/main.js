@@ -1,3 +1,6 @@
+function round(x,n) {
+    return Math.round(x*Math.pow(10,n))/Math.pow(10,n);
+}
 window.onload=function () {
     var width = document.getElementById("rect-width");
     var height = document.getElementById('rect-height');
@@ -7,7 +10,7 @@ window.onload=function () {
     console.log(width.value);
     
     calculate.onclick=function () {
-        per.value = (Number(width.value)+Number(height.value))*2;
-        area.value = Number(width.value) * Number(height.value)
+        per.value = (round(Number(width.value)+Number(height.value),1))*2;
+        area.value = round(Number(width.value) * Number(height.value),2);
     }
 }
