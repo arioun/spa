@@ -1,5 +1,13 @@
 $(function(){
     $("#rect-width").blur(function () {
-        if(this.val())
+        
     })
+    function isNum(val) {
+        if(val===""||val==null){
+            return false;
+        }
+        if(isNaN(val)){
+
+        }
+    }
 })

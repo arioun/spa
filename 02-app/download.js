@@ -1,8 +1,11 @@
 $(function () {
     var temp=0;
-    var timer;
+    var timer=0;
     
     $("#begin-btn").click(function () {
+        if (timer!==0) {
+            return;
+        }
         timer = setInterval(function () {
             temp ++;
             $("#prog").val(temp);
@@ -14,6 +17,7 @@ $(function () {
 
     $("#pause-btn").click(function(){
         window.clearInterval(timer);
+        timer=0;
     });
     $("#reset-btn").click(function(){
         temp = 0;
