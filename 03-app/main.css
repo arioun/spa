@@ -4,3 +4,5 @@ label,input{
 }
 input{height: 22px;}
 .rect{text-align: center;}
+#rect-width-ver{font-size: 10px;color: red;}
+#rect-height-ver{font-size: 10px;color: red;}

@@ -7,17 +7,20 @@
     <title>表单校验</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script src="../jquery.min.js"></script>
     <script src="form-verify.js"></script>
 </head>
 
 <body>
     <div class="rect">
         <form>
-            <label for="">宽度：</label>
+            <label id="rect-width-label" value="宽度">宽度：</label>
             <input type="text" id="rect-width" autofocus="autofocus">
+            <div id="rect-width-ver"></div>
             <br>
-            <label for="">高度：</label>
+            <label id="rect-height-label" value="高度">高度：</label>
             <input type="text" id="rect-height">
+            <div id="rect-height-ver"></div>
         </form>
         <br>
         <form>
