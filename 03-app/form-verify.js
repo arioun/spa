@@ -4,12 +4,13 @@ $(function () {
     var per = $("#rect-per");
     var area = $("#rect-area");
     var $cal = $("#rect-button");
-
+    var bln = false;
     $cal.click(function () {
+        if (!bln) { return; }
         var width = Number($width.val());
         var height = Number($height.val());
-        verify("rect-width");
-        verify("rect-height");
+        bln =verify("rect-width");
+        bln =verify("rect-height");
         per.val(((width + height) * 2).toFixed(3));
         area.val((width * height).toFixed(3));
 

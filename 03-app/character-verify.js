@@ -4,7 +4,9 @@ $(function () {
     var per = $("#rect-per");
     var area = $("#rect-area");
     var $cal = $("#rect-button");
+    var bln = false;
     $cal.click(function () {
+        if (!bln) { return; }
         var width = Number($width.val());
         var height = Number($height.val());
 
@@ -19,10 +21,10 @@ $(function () {
         verifyKey(e);
     })
     $width.focusout(function () {
-        verify("rect-width");
+        bln =verify("rect-width");
     })
     $height.focusout(function () {
-        verify("rect-height");
+        bln = verify("rect-height");
     })
 
     function verifyKey(e) {

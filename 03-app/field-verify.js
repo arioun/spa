@@ -6,7 +6,9 @@ $(function () {
     var $cal = $("#rect-button");
     var $wlabel = $("#rect-width-label");
     var $hlabel = $("#rect-height-label");
+    var bln =false;
     $cal.click(function () {
+        if (!bln) { return;}
         var width = Number($width.val());
         var height = Number($height.val());
        
@@ -16,10 +18,10 @@ $(function () {
     });
 
     $width.focusout(function(){
-        verify("rect-width");
+       bln= verify("rect-width");
     })
     $height.focusout(function () {
-        verify("rect-height");
+        bln=verify("rect-height");
     })
 
     function verify(val) {
