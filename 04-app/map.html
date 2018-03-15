@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="map.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=yvuRyfeZeWrT6KxGgGK5G5MU1bI4L8tf"></script>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+    
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+    
+        #container {
+            height: 100%
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+    var map = new BMap.Map("container"); 
+    var point = new BMap.Point(116.404, 39.915); 
+    map.centerAndZoom(point, 18);  
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function (r) {
+        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var mk = new BMap.Marker(r.point);
+            map.addOverlay(mk);
+            map.panTo(r.point);
+        }
+        else {
+            alert('failed' + this.getStatus());
+        }
+    }, { enableHighAccuracy: true })
+    map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+    map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+    
+    var mapType1 = new BMap.MapTypeControl({ mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP] });
+        var mapType2 = new BMap.MapTypeControl({ anchor: BMAP_ANCHOR_TOP_LEFT });
+        var overView = new BMap.OverviewMapControl();
+        var overViewOpen = new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT });
+    map.addControl(mapType1);          //2D图，卫星图
+        map.addControl(mapType2);          //左上角，默认地图控件
+        map.setCurrentCity("北京");        //由于有3D图，需要设置城市哦
+        map.addControl(overView);          //添加默认缩略地图控件
+        map.addControl(overViewOpen);      //右下角，打开
+</script>
+</body>
+</html>
