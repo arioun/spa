@@ -1,10 +1,31 @@
-$(function () {
-    $('.icon').mouseenter(function () {
-        $('.icon').css("background-image", "url(eye.png)");
-        $('.pwd').attr("type", "text");
-    })
-    $('.icon').mouseleave(function () {
-        $('.icon').css("background-image", "url(eye-close.png)");
-        $('.pwd').attr("type", "password");
-    })
-});
+
+var pwdtext = function (config) {
+    var cfg = config;
+    var $pwd = $('<input type="password">'),
+        $pwdText = $('<input type="text">'),
+        $eye = $('<div class="icon"></div>'),
+        $div = $('<div class="pwd">密码：</div>');
+
+    $div.append($pwd);
+    $div.append($eye);
+    $div.append($pwdText);
+    $(cfg.container).append($div);
+
+    $pwd.on('input', function () {
+        $pwdText.val($pwd.val());
+        console.log($pwdText.val());
+        
+    });
+
+    $eye.mouseover(function () {
+        $pwdText.css('z-index', '10');
+    });
+
+    $eye.mouseout(function () {
+        $pwdText.css('z-index', '-10');
+    });
+
+    this.getPwd = function () {
+        return $pwdText.val();
+    };
+};
