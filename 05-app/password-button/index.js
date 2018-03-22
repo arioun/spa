@@ -1,0 +1,5 @@
+$(function () {
+    $('#pwdbtn').click(function () {
+        
+    })
+})

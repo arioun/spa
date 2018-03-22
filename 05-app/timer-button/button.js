@@ -1,5 +1,6 @@
 var timerButton=function (config) {
     var cfg=config;
+    var temp = cfg.tlength;
     var t = cfg.tlength;
     var $btn = $('<input type="button" class="timer-button">');
     var timer;
@@ -25,11 +26,11 @@ var timerButton=function (config) {
         $btn.attr('disabled', 'disabled');
         btnCotent();
         timer = window.setInterval(function () {
-
             t--;
             btnCotent();
             if (t === 0) {
                 enableBtn();
+                t=temp;
             }
         }, 1000);
     }
