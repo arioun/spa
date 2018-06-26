@@ -3,7 +3,7 @@ $(function () {
     var pwdbox=[];
     $('#pwdbtn').click(function (e) {
         e.preventDefault();
-        var pwd=pwdtext({
+        var pwd=new pwdtext({
             'container': 'div.main'
         });
         pwdbox.push(pwd);
